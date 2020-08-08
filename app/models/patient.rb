@@ -2,11 +2,12 @@ require 'pry'
 
 class Patient
     attr_reader :impatience
-    attr_accessor :name, :age
+    attr_accessor :name, :age, :doctor
     @@all = []
-    def initialize(name, age)
+    def initialize(name, age, doctor)
         @name = name
         @age = age
+        @doctor = doctor
         @impatience = 0
         @@all << self
     end
@@ -20,6 +21,10 @@ class Patient
         @@all
     end
 
+    def change_doctor(doctor_instance)
+        self.doctor = doctor_instance
+    end    
+        
     
     private
 
